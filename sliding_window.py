@@ -17,6 +17,7 @@ min_length = len(string)
 found = False
 """
 
+
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         len_of_t = len(t)
@@ -27,11 +28,7 @@ class Solution:
             return s
         if len_of_t == 0:
             return ""
-        pattern_map = {}
-        for char in t:
-            if char not in pattern_map:
-                pattern_map[char] = 0
-            pattern_map[char] += 1
+        pattern_map = self.get_pattern_map(t)
         t1 = 0
         t2 = 0
         count = len_of_t
@@ -40,10 +37,7 @@ class Solution:
         min_length = len_of_s
         found = False
         while t2 < len_of_s:
-            if s[t2] in pattern_map:
-                if pattern_map[s[t2]] > 0:
-                    count -= 1
-                pattern_map[s[t2]] -= 1
+            count = self.handle_pattern_count(s, pattern_map, t2, count)
             while count == 0:
                 found = True
                 if t2 - t1 + 1 < min_length:
@@ -57,6 +51,23 @@ class Solution:
                 t1 += 1
             t2 += 1
         if found:
-            return s[left:right+1]
+            return s[left : right + 1]
         return ""
 
+    def handle_pattern_count(self, s, pattern_map, t2, count):
+        if s[t2] in pattern_map:
+            if pattern_map[s[t2]] > 0:
+                count -= 1
+            pattern_map[s[t2]] -= 1
+        return count
+
+    def get_pattern_map(self, pattern):
+        pattern_map = {}
+        for char in pattern:
+            if char not in pattern_map:
+                pattern_map[char] = 0
+            pattern_map[char] += 1
+        return pattern_map
+
+
+Solution().minWindow("ADOBECODEBANC", "ABC")
