@@ -24,4 +24,5 @@ Order in which I learned each DSA section.
 
 Array:
 
-1. [Sliding window](./sliding_window.py)
+1. [2sum](./Array/2sum.py)
+2. [Sliding window](./Array/sliding_window.py)
