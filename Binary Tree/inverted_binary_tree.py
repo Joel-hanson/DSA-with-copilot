@@ -1,4 +1,4 @@
-'''
+"""
 Given the root of a binary tree, invert the tree, and return its root.
 
 
@@ -23,7 +23,7 @@ The number of nodes in the tree is in the range [0, 100].
 -100 <= Node.val <= 100
 
 Answer: Use a queue to store the nodes of the tree. Pop the first node from the queue. Swap the left and right children of the node. Add the left and right children of the node to the queue. Repeat until the queue is empty.
-'''
+"""
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -34,6 +34,7 @@ class TreeNode:
 
     def __repr__(self) -> str:
         return f"{self.val} -> {self.left} {self.right}"
+
 
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:

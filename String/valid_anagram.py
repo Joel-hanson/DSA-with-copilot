@@ -27,6 +27,7 @@ Answer: Use a dictionary to store the frequency of each character in the first s
 
 from typing import Dict
 
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # Create a dictionary to store the frequency of each character in the first string
@@ -84,5 +85,3 @@ class Solution:
 #             if value != 0:
 #                 return False
 #         return True
-
-

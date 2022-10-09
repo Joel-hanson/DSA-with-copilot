@@ -1,4 +1,4 @@
-'''
+"""
 An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image.
 
 You are also given three integers sr, sc, and color. You should perform a flood fill on the image starting from the pixel image[sr][sc].
@@ -31,12 +31,15 @@ n == image[i].length
 0 <= sc < n
 
 Answer: Use a depth-first search to traverse the image. If the current pixel is the same color as the starting pixel, change the current pixel to the new color. Return the image.
-'''
+"""
 
 from typing import List
 
+
 class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+    def floodFill(
+        self, image: List[List[int]], sr: int, sc: int, color: int
+    ) -> List[List[int]]:
         """
         Time Complexity: O(m * n)
         Space Complexity: O(m * n)

@@ -36,6 +36,7 @@ class ListNode:
     def __repr__(self) -> str:
         return f"{self.val} -> {self.next}"
 
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         # Create a new list

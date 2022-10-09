@@ -83,4 +83,3 @@ class Solution:
 #             if price_diff > highest_selling:
 #                 highest_selling = price_diff
 #         return highest_selling
-

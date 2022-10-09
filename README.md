@@ -26,3 +26,6 @@ Array:
 
 1. [2sum](./Array/2sum.py)
 2. [Sliding window](./Array/sliding_window.py)
+
+Two Pointer:
+
