@@ -223,4 +223,3 @@ Design:
 17. [Serialize and deserialize binary search tree](./Design/serialize_and_deserialize_binary_search_tree.py)
 18. [Serialize and deserialize N-ary tree](./Design/serialize_and_deserialize_N-ary_tree.py)
 19. [Serialize and deserialize N-ary tree II](./Design/serialize_and_deserialize_N-ary_tree_II.py
-

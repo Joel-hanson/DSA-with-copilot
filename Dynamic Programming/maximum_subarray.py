@@ -57,6 +57,76 @@ class Solution:
         return maximum_subarray
 
 
+# Divide and Conquer Approach
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        """
+        Time Complexity: O(n log n)
+        Space Complexity: O(log n)
+        """
+        # Return the maximum subarray
+        return self.divide_and_conquer(nums, 0, len(nums) - 1)
+
+    def divide_and_conquer(self, nums: List[int], left: int, right: int) -> int:
+        # If the left index is greater than the right index
+        if left > right:
+            # Return the minimum integer
+            return -float("inf")
+
+        # Calculate the middle index
+        middle = (left + right) // 2
+
+        # Calculate the maximum subarray at the middle index
+        maximum_subarray_at_middle = nums[middle]
+
+        # Calculate the maximum subarray at the middle index
+        maximum_subarray_at_middle_left = nums[middle]
+
+        # Calculate the maximum subarray at the middle index
+        maximum_subarray_at_middle_right = nums[middle]
+
+        # Calculate the maximum subarray at the middle index
+        for index in range(middle - 1, left - 1, -1):
+            # Calculate the maximum subarray at the middle index
+            maximum_subarray_at_middle_left += nums[index]
+
+            # Calculate the maximum subarray at the middle index
+            maximum_subarray_at_middle = max(
+                maximum_subarray_at_middle, maximum_subarray_at_middle_left
+            )
+
+        # Calculate the maximum subarray at the middle index
+        for index in range(middle + 1, right + 1):
+            # Calculate the maximum subarray at the middle index
+            maximum_subarray_at_middle_right += nums[index]
+
+            # Calculate the maximum subarray at the middle index
+            maximum_subarray_at_middle = max(
+                maximum_subarray_at_middle, maximum_subarray_at_middle_right
+            )
+
+        # Calculate the maximum subarray at the middle index
+        maximum_subarray_at_middle = max(
+            maximum_subarray_at_middle,
+            maximum_subarray_at_middle_left
+            + maximum_subarray_at_middle_right
+            - nums[middle],
+        )
+
+        # Calculate the maximum subarray at the left index
+        maximum_subarray_at_left = self.divide_and_conquer(nums, left, middle - 1)
+
+        # Calculate the maximum subarray at the right index
+        maximum_subarray_at_right = self.divide_and_conquer(nums, middle + 1, right)
+
+        # Return the maximum subarray
+        return max(
+            maximum_subarray_at_middle,
+            maximum_subarray_at_left,
+            maximum_subarray_at_right,
+        )
+
+
 if __name__ == "__main__":
     # Initialize the solution
     solution = Solution()
