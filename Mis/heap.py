@@ -45,6 +45,12 @@ class Heap:
         self.shift_down(0)
         return self.data.pop()
 
+    def delete(self, i):
+        self.data[i], self.data[self.size - 1] = self.data[self.size - 1], self.data[i]
+        self.size -= 1
+        self.shift_down(i)
+        return self.data.pop()
+
     def __str__(self):
         return str(self.data)
 
