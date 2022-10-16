@@ -36,6 +36,18 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Algorithm:
+        1. Create a hash table to store the values and their indices
+        2. For each value
+            a. Check if the target minus the value is in the hash table
+            b. If it is, return the indices of the value and the target minus the value
+            c. If not, add the value and its index to the hash table
+
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        Pattern: Hash Table
+        """
         # Create a hash table to store the values and their indices
         hash_table = {}
 

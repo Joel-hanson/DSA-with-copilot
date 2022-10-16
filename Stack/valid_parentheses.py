@@ -34,6 +34,23 @@ Answer: Use a stack to store the opening brackets. For each closing bracket, che
 
 class Solution:
     def isValid(self, s: str) -> bool:
+        """
+        Algorithm:
+        1. Use a stack to store the opening brackets
+        2. For each closing bracket
+            2.1. Check if the stack is empty
+                2.1.1. If it is, return False
+            2.2. Pop the top element from the stack
+            2.3. Check if it is the corresponding opening bracket
+                2.3.1. If it is, continue
+                2.3.2. If not, return False
+        3. Check if the stack is empty
+            3.1. If it is, return True
+            3.2. If not, return False
+        Pattern: Stack
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        """
         # Create a stack to store the opening brackets
         stack = []
 

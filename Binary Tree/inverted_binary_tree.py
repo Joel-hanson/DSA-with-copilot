@@ -38,6 +38,17 @@ class TreeNode:
 
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
+        """
+        Algorithm:
+        1. Use a queue to store the nodes of the tree
+        2. Pop the first node from the queue
+        3. Swap the left and right children of the node
+        4. Add the left and right children of the node to the queue
+        5. Repeat until the queue is empty
+        Pattern: Breadth First Search
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        """
         # If the root is None
         if root is None:
             # Return None

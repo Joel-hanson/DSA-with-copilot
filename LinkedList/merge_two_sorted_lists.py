@@ -39,6 +39,18 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        """
+        Algorithm:
+        1. Use two pointers to traverse the two lists
+        2. Compare the values of the nodes pointed by the two pointers
+        3. Add the node with the smaller value to the merged list
+        4. Move the pointer of the list with the smaller value to the next node
+        5. Repeat until one of the two lists is empty
+        6. Then, add the remaining nodes of the other list to the merged list
+        Pattern: Two Pointers
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
         # Create a new list
         new_list = ListNode()
 

@@ -31,6 +31,25 @@ from typing import List
 # Two pointer solution
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        """
+        Algorithm:
+        1. Use two pointers to traverse the array
+            a. The first pointer is the buy pointer
+            b. The second pointer is the sell pointer
+        2. The buy pointer starts at the first element of the array
+        3. The sell pointer starts at the second element of the array
+        4. Compare the value of the element pointed by the buy pointer with the value of the element pointed by the sell pointer
+            a. If the value of the element pointed by the buy pointer is less than the value of the element pointed by the sell pointer, calculate the profit
+            b. If the profit is greater than the maximum profit, update the maximum profit
+            c. Move the sell pointer to the next element
+            d. If the value of the element pointed by the buy pointer is greater than or equal to the value of the element pointed by the sell pointer, move the buy pointer to the sell pointer
+            e. Move the sell pointer to the next element
+        5. Repeat until the sell pointer reaches the end of the array
+        6. Return the maximum profit
+        Pattern: Two Pointer
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
         # Create a variable to store the maximum profit
         max_profit = 0
 
@@ -67,9 +86,11 @@ class Solution:
         return max_profit
 
 
-# Brute Force Solution
 # class Solution:
 #     def maxProfit(self, prices: List[int]) -> int:
+#         '''
+#             Time Complexity: O(n)
+#         '''
 #         lowest_price = None
 #         highest_selling = 0
 #         index = 0
@@ -79,7 +100,8 @@ class Solution:
 #                 index += 1
 #             if price < lowest_price:
 #                 lowest_price = price
-#             price_diff = price - lowest_price
-#             if price_diff > highest_selling:
-#                 highest_selling = price_diff
+#             if price > lowest_price:
+#                 price_diff = price - lowest_price
+#                 if price_diff > highest_selling:
+#                     highest_selling = price_diff
 #         return highest_selling
