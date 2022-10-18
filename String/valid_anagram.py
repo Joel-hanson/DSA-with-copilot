@@ -30,6 +30,12 @@ from typing import Dict
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        """
+        Algorithm: Use a dictionary to store the frequency of each character in the first string. Traverse the second string. For each character in the second string, if the character is not in the dictionary, return False. If the character is in the dictionary, decrement the frequency of the character in the dictionary. If the frequency of the character in the dictionary is less than 0, return False. Return True.
+        Pattern: Hash Table
+        Time complexity: O(n)
+        Space complexity: O(n)
+        """
         # Create a dictionary to store the frequency of each character in the first string
         frequency = {}
 
@@ -84,4 +90,22 @@ class Solution:
 #         for key, value in frequency_map.items():
 #             if value != 0:
 #                 return False
+#         return True
+
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         frequency = {}
+#         for char in s:
+#             frequency[char] = frequency.get(char, 0) + 1
+#         for char in t:
+#             char_frequency = frequency.get(char)
+#             if char_frequency is None:
+#                 return False
+#             char_frequency -= 1
+
+#             if char_frequency == 0:
+#                 del frequency[char]
+#             else:
+#                 frequency[char] = char_frequency
+#         if frequency:
+#             return False
 #         return True
