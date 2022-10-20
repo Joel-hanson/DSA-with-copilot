@@ -41,6 +41,11 @@ class Solution:
         self, image: List[List[int]], sr: int, sc: int, color: int
     ) -> List[List[int]]:
         """
+        Algorithm:
+            1. Use a depth-first search to traverse the image.
+            2. If the current pixel is the same color as the starting pixel, change the current pixel to the new color.
+            3. Return the image.
+        Pattern: Depth-First Search
         Time Complexity: O(m * n)
         Space Complexity: O(m * n)
         """

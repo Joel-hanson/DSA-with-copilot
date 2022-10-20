@@ -12,7 +12,7 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 Example 2:
 
 Input: nums = [1]
-Output: 1
+Output: 
 Example 3:
 
 Input: nums = [5,4,-1,7,8]
@@ -26,6 +26,7 @@ Constraints:
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 Answer: Use dynamic programming to find the maximum subarray. The maximum subarray at index i is the maximum of the maximum subarray at index i minus 1 plus the current element or the current element. The maximum subarray is the maximum of the maximum subarray at each index.
+https://www.youtube.com/watch?v=4csAswCkXZM&ab_channel=QuanticDev
 """
 
 from typing import List
@@ -34,11 +35,16 @@ from typing import List
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         """
+        Algorithm:
+            1. Use dynamic programming to find the maximum subarray.
+            2. The maximum subarray at index i is the maximum of the maximum subarray at index i minus 1 plus the current element or the current element.
+            3. The maximum subarray is the maximum of the maximum subarray at each index.
+        Pattern: Dynamic Programming
         Time Complexity: O(n)
         Space Complexity: O(1)
         """
         # Initialize the maximum subarray at index 0
-        maximum_subarray = nums[0]
+        maximum_subarray_value = nums[0]
 
         # Initialize the maximum subarray at index 0
         maximum_subarray_at_index = nums[0]
@@ -52,9 +58,26 @@ class Solution:
 
             # Calculate the maximum subarray
             maximum_subarray = max(maximum_subarray, maximum_subarray_at_index)
-
         # Return the maximum subarray
         return maximum_subarray
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        """
+        Pattern: Dynamic Programming
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
+        if not nums:
+            return 0
+        dp = []
+        max_sum = nums[0]
+
+        for num in nums[1:]:
+            dp.append(max(dp[-1] + num, num))
+            max_sum = max(max_sum, dp[-1])
+        return max_sum
 
 
 # Divide and Conquer Approach

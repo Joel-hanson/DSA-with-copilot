@@ -31,7 +31,13 @@ from typing import Dict
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         """
-        Algorithm: Use a dictionary to store the frequency of each character in the first string. Traverse the second string. For each character in the second string, if the character is not in the dictionary, return False. If the character is in the dictionary, decrement the frequency of the character in the dictionary. If the frequency of the character in the dictionary is less than 0, return False. Return True.
+        Algorithm:
+            1. Use a dictionary to store the frequency of each character in the first string.
+            2. Traverse the second string.
+            3. For each character in the second string, if the character is not in the dictionary, return False.
+            4. If the character is in the dictionary, decrement the frequency of the character in the dictionary.
+            5. If the frequency of the character in the dictionary is less than 0, return False.
+            6. Return True.
         Pattern: Hash Table
         Time complexity: O(n)
         Space complexity: O(n)

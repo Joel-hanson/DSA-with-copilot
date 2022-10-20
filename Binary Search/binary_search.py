@@ -31,6 +31,11 @@ from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         """
+        Algorithm:
+            1. Use binary search to find the target.
+            2. If the target is found, return the index of the target.
+            3. If the target is not found, return -1.
+        Pattern: Binary Search
         Time Complexity: O(log n)
         Space Complexity: O(1)
         """
@@ -39,6 +44,7 @@ class Solution:
         right = len(nums) - 1
 
         # While the left index is less than or equal to the right index
+        # Equal is because if there only one element in the array, the left and right indices will be the same
         while left <= right:
             # Calculate the middle index
             middle = (left + right) // 2
