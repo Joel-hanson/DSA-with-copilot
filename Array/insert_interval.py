@@ -35,14 +35,22 @@ class Solution:
     def insert(
         self, intervals: List[List[int]], newInterval: List[int]
     ) -> List[List[int]]:
+        """
+        Algorithm:
+            1. Use a while loop to find the start index of the new interval.
+            2. Use a while loop to find the end index of the new interval.
+            3. Insert the new interval into the intervals array.
+            4. Merge the intervals array.
+        Pattern: Two Pointers
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
         result = []
         i = 0
         while i < len(intervals) and newInterval[0] > intervals[i][1]:
             result += (intervals[i],)
             i += 1
-        print(result)
         while i < len(intervals) and newInterval[1] >= intervals[i][0]:
-            print(newInterval, intervals[i], newInterval[1], intervals[i][0])
             newInterval = [
                 min(newInterval[0], intervals[i][0]),
                 max(newInterval[1], intervals[i][1]),
