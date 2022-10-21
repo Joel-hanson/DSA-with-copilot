@@ -47,6 +47,13 @@ class Solution:
         self, root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]
     ) -> Optional[TreeNode]:
         """
+        Algorithm:
+            1. If the root is None, return None
+            2. If the root is equal to p or q, return the root
+            3. If the root is greater than both p and q, the lowest common ancestor is in the left subtree
+            4. If the root is less than both p and q, the lowest common ancestor is in the right subtree
+            5. Otherwise, the root is the lowest common ancestor
+        Pattern: Binary Search
         Time Complexity: O(log n)
         Space Complexity: O(1)
         """
