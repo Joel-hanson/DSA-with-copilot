@@ -1,4 +1,12 @@
-# Learnings
+## Overview
+
+This repo is a collect of my personal notes and scripts to help me learn and understand the basics of the data structures and algorithms with the help of github copilot.
+
+How is copilot helping me learn?
+
+Copilot is assisting me in writing the code and comprehending the ideas. I'm using Copilot to speed up the process of writing the code and comprehending the concepts, as well as to shorten the time it takes for me to research the best solution online.
+
+### Learnings
 
 Top techniques to approach and solve coding interview questions
 
@@ -19,13 +27,3 @@ How to optimize space complexity
 
 1. Changing data in-place/overwriting input data
 2. Change a data structure
-
-Order in which I learned each DSA section.
-
-Array:
-
-1. [2sum](./Array/2sum.py)
-2. [Sliding window](./Array/sliding_window.py)
-
-Two Pointer:
-
