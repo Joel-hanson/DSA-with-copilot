@@ -98,10 +98,6 @@ class Solution:
 
 class Solution:
     def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
-        """
-        Algorithm:
-
-        """
         rc = len(matrix)
         cc = len(matrix[0])
         # 0 -> n
