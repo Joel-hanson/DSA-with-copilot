@@ -33,7 +33,14 @@ Answer: Use two pointers, one at the beginning of the string and one at the end 
 class Solution:
     def isPalindrome(self, string: str) -> bool:
         """
+        Algorithm:
+            1. Use two pointers, one at the beginning of the string and one at the end of the string.
+            2. Move the pointers towards each other, comparing the characters at each pointer.
+            3. If the characters are not equal, return False.
+            4. If the pointers meet, return True.
+        Pattern: Two Pointers
         Time Complexity: O(n)
+        Space Complexity: O(1)
         """
         # Create a variable to store the left pointer
         left_pointer = 0
