@@ -1,3 +1,7 @@
+# <https://www.techinterviewhandbook.org/grind75?grouping=weeks&order=all_rounded&mode=preferences&weeks=4&hours=16>
+
+## Grind75
+
 1. [2sum](./Array/2sum.py)
 2. [Sliding window](./Array/sliding_window.py)
 3. [3sum](./Array/3sum.py)
