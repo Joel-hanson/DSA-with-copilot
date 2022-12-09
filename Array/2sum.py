@@ -63,3 +63,42 @@ class Solution:
 
             # If not, add the value and its index to the hash table
             hash_table[value] = i
+
+        return []
+
+
+# Two pointer solution
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Algorithm:
+            1. Sort the array
+            2. Use two pointers to find the indices
+            3. If the sum is less than the target, move the left pointer to the right
+            4. If the sum is greater than the target, move the right pointer to the left
+            5. If the sum is equal to the target, return the indices
+            6. Return None
+
+        Time Complexity: O(nlogn)
+        Space Complexity: O(n)
+        Pattern: Two Pointers
+        """
+        # Sort the array
+        nums.sort()
+
+        # Use two pointers to find the indices
+        left, right = 0, len(nums) - 1
+        while left < right:
+            # If the sum is less than the target, move the left pointer to the right
+            if nums[left] + nums[right] < target:
+                left += 1
+
+            # If the sum is greater than the target, move the right pointer to the left
+            elif nums[left] + nums[right] > target:
+                right -= 1
+
+            # If the sum is equal to the target, return the indices
+            else:
+                return [left, right]
+
+        return None
